@@ -1,20 +1,30 @@
 import { HelloCommand } from "./HelloCommand.js";
 
-export function createSlashCommands(commandCollector) {
-    let command = HelloCommand.createCommand();
+function createCommands() {
+    let commands = [];
+    commands.push(HelloCommand.createCommand());
 
-    if ('data' in command && 'execute' in command) {
-        commandCollector.set(command.data.name, command);
-    }
+    return commands;
+}
+
+export function createSlashCommands(commandCollector) {
+    let commands = createCommands();
+
+    commands.forEach((command) => {
+        if ('data' in command && 'execute' in command) {
+            commandCollector.set(command.data.name, command);
+        }
+    });
 }
 
 export function createDeploySlashCommands() {
-    let commands = []
+    let commands = createCommands();
 
-    let command = HelloCommand.createCommand();
-    if ('data' in command && 'execute' in command) {
-        commands.push(command.data.toJSON());
-    }
+    commands.forEach((command, index) => {
+        if ('data' in command && 'execute' in command) {
+            commands[index] = command.data.toJSON();
+        }
+    });
 
     return commands;
 }
