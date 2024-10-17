@@ -4,7 +4,7 @@ import { createDeploySlashCommands } from "./slashCommands/slashCommand.js";
 
 export async function configRest() {
     const rest = new REST().setToken(process.env.BOT_TOKEN);
-    deploySlashCommands(rest)
+    await deploySlashCommands(rest);
 }
 
 async function deploySlashCommands(restAPI) {
