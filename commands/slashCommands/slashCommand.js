@@ -1,9 +1,10 @@
+import { CreateThreadCommand } from "./CreateThreadCommand.js";
 import { HelloCommand } from "./HelloCommand.js";
 
 function createCommands() {
     let commands = [];
     commands.push(HelloCommand.createCommand());
-
+    commands.push(CreateThreadCommand.createCommand());
     return commands;
 }
 
