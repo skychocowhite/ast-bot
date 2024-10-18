@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "discord.js";
-import { Command } from "./Command.js";
+import { Command } from "../Command.js";
 
 export class CreateThreadCommand extends Command {
     static createCommand() {

@@ -1,5 +1,5 @@
 import { REST, Routes } from "discord.js";
-import { createDeploySlashCommands } from "./slash-commands/slashCommand.js";
+import { createDeploySlashCommands } from "./slash-command.js";
 
 
 export async function configRest() {
