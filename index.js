@@ -1,5 +1,6 @@
 import { configDotEnv } from "./config.js";
-import { bootDiscordBot } from "./discord-bot/bot.js";
+import { bootDiscordBot, createDiscordBot } from "./discord-bot/bot.js";
 
 configDotEnv();
-bootDiscordBot();
+const bot = createDiscordBot();
+bootDiscordBot(bot);
